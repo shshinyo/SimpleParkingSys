@@ -1,0 +1,97 @@
+div.active{
+    display: inline-block;
+    background-color: aliceblue;
+     margin: 7px;
+     height: 300px;
+}
+.truckactive{
+   display: inline-block;
+   background-color: antiquewhite;
+    margin: 7px;
+    height: 300px;
+}
+.motoactive{
+   display: inline-block;
+   background-color: lightgray;
+    margin: 7px;
+    height: 300px;
+}
+.hidden{
+   display:none;
+
+}
+
+.title{
+   height: 50px;
+   border-radius: 5px;
+   text-align: center;
+   cursor: pointer;
+   padding: 10px;
+}
+.backcolor{
+   background-color: rgb(209, 113, 113);
+}
+ .hidemoto{
+    display: none;
+ }
+ .hidecar{
+    display: none;
+ }
+ .hidetruck{
+    display:none;
+ }
+ .printedticket{
+  
+   border-radius: 5px;
+   border: 1px solid greenyellow;
+   background-color:whitesmoke;
+   color: black;
+   margin: 10px auto;
+   text-align: center;
+ 
+
+}
+.ticket{
+   width: 600px;
+   height: 500px;
+  margin-bottom:20px ;
+
+}
+span{
+   color: rgb(73, 69, 65);
+   font-weight: bold;
+}
+.motodesc{
+   height: 200px;
+   width: 900px;
+   margin: 5px;
+}
+.motodesc img{
+   width: 60%;
+   border-radius: 5px;
+   height: 100%;
+   opacity: .8;
+}
+input[type=button]{
+   margin-left: 5px;
+  
+}
+.runout,.carrunout,.truckrunout{
+margin-left: 15px;
+width: 30%;
+background-color: snow;
+}
+.card{
+   border: 1px solid red;
+   overflow: hidden;
+   border-radius: 5px;
+   text-align: center;
+}
+.search{
+   padding: 5px;
+   margin-left:20px ;
+}
+.search .searchinput{
+   border-radius: 2px;
+   color: firebrick;
+}

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ParkingSystem</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="ParkingSystem.css">
+</head>
+<body>
+
+
+    <div class="container">
+      <h2 class="h1 text-center">Parking System</h2>
+      <div class="row">
+        <button class="col-md-2 bg-muted m-1 title " >Moto Parking Area</button>
+        <button class="col-md-2 bg-muted m-1 title backcolor" >Car Parking Area</button>
+        <button class="col-md-2 bg-muted m-1 title" >Truck Parking Area</button>
+        <form class="search"><input type="text" class="searchinput" placeholder="type an exsiting client"><input type="button" class="btn btn-success searchbutton" value="Search For a Client" ></form>
+      </div>
+     
+      
+      <div class="container hidden MotoDiv">
+        <h3>Motocycle Parking area</h3>
+         <div class="container ">
+              <div class="motodesc row">
+            <img src="moto.jpg">
+            <div class="float-right runout hidden" >
+                <button class="btn btn-info btn-block checkforextra">Check in cars or trucks areas</button>
+                <div>Result:</div>
+                <div class=" checkresult"></div>
+            </div>
+        </div>
+    </div>
+         
+          <span>Number of Free MotoCycle Slots <span id='nmotoslots' style="color: red; font-weight:bolder;" ></span></span>
+     <div class="row">
+         <div class="motoactive col-md-3 card m"><span>First</span> <form><input class=" motoinputstatus" type="text" placeholder="Client or MotoNumber" ><input type="button"  value="save" onclick="save(0,'moto')" class="  btn btn-primary btn-sm motoslotstatus"><input type="button" value="Leave" class="  motoleave btn btn-secondary btn-block hidden "  onclick="leave(0,'moto')"></form><hr><p class="motofreeornot font-weight-bold">FreePlace</p><span>currentUser:</span> <p class='motousername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="motodate"></p></div>
+     
+         <div class="motoactive col-md-3 card m"><span>Second</span> <form><input class="motoinputstatus" type="text" placeholder="Client or MotoNumber" ><input type="button" value="save" onclick="save(1,'moto')" class="btn btn-primary btn-sm motoslotstatus"><input type="button" value="Leave" class="motoleave btn btn-secondary btn-block hidden "  onclick="leave(1,'moto')"></form><hr><p class="motofreeornot font-weight-bold">FreePlace</p><span>currentUser:</span> <p class='motousername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="motodate"></p></div>
+       
+         <div class="motoactive col-md-3 card m"><span>Third</span>   <form><input class="motoinputstatus" type="text" placeholder="Client or MotoNumber" ><input type="button" value="save" onclick="save(2,'moto')" class="btn btn-primary btn-sm motoslotstatus"><input type="button" value="Leave" class="motoleave btn btn-secondary btn-block hidden "  onclick="leave(2,'moto')"></form><hr><p class="motofreeornot font-weight-bold">FreePlace</p><span>currentUser:</span> <p class='motousername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="motodate"></p></div>
+       
+         <div class="motoactive col-md-3 card m"><span>Forth</span> <form><input class="motoinputstatus" type="text" placeholder="Client or MotoNumber" ><input type="button" value="save" onclick="save(3,'moto')" class="btn btn-primary btn-sm motoslotstatus"><input type="button" value="Leave" class="motoleave btn btn-secondary btn-block hidden "  onclick="leave(3,'moto')"></form><hr><p class="motofreeornot font-weight-bold">FreePlace</p><span>currentUser:</span> <p class='motousername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="motodate"></p></div>
+         
+         <div class="motoactive col-md-3 card m"><span>Fifth</span> <form><input class="motoinputstatus" type="text" placeholder="Client or MotoNumber" ><input type="button" value="save"  onclick="save(4,'moto')" class="btn btn-primary btn-sm motoslotstatus"><input type="button" value="Leave" class="motoleave btn btn-secondary btn-block hidden "  onclick="leave(4,'moto')"></form><hr><p class="motofreeornot font-weight-bold">FreePlace</p><span>currentUser:</span> <p class='motousername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="motodate"></p></div>
+         
+         <div class="motoactive col-md-3 card m"><span>Sixth</span> <form><input class="motoinputstatus" type="text" placeholder="Client or MotoNumber" ><input type="button" value="save" onclick="save(5,'moto')" class="btn btn-primary btn-sm motoslotstatus"><input type="button" value="Leave" class="motoleave btn btn-secondary btn-block hidden "  onclick="leave(5,'moto')"></form><hr><p class="motofreeornot font-weight-bold">FreePlace</p><span>currentUser:</span> <p class='motousername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="motodate"></p></div>
+         
+         <div class="motoactive col-md-3 card m"><span>Seventh</span> <form><input class="motoinputstatus" type="text" placeholder="Client or MotoNumber" ><input type="button" value="save" onclick="save(6,'moto')" class="btn btn-primary btn-sm motoslotstatus"><input type="button" value="Leave" class="motoleave btn btn-secondary btn-block hidden "  onclick="leave(6,'moto')"></form><hr><p class="motofreeornot font-weight-bold">FreePlace</p><span>currentUser:</span> <p class='motousername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="motodate"></p></div>
+         
+         <div class="motoactive col-md-3 card m"><span>Eighth</span> <form><input class="motoinputstatus" type="text" placeholder="Client or MotoNumber" ><input type="button" value="save" onclick="save(7,'moto')" class="btn btn-primary btn-sm motoslotstatus"><input type="button" value="Leave" class="motoleave btn btn-secondary btn-block hidden "  onclick="leave(7,'moto')"></form><hr><p class="motofreeornot font-weight-bold">FreePlace</p><span>currentUser:</span> <p class='motousername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="motodate"></p></div>
+    
+         <div class="motoactive col-md-3 card m"><span>Ninth</span>  <form><input class="motoinputstatus" type="text" placeholder="Client or MotoNumber" ><input type="button" value="save" onclick="save(8,'moto')" class="btn btn-primary btn-sm motoslotstatus"><input type="button" value="Leave" class="motoleave btn btn-secondary btn-block hidden "  onclick="leave(8,'moto')"></form><hr><p class="motofreeornot font-weight-bold">FreePlace</p><span>currentUser:</span> <p class='motousername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="motodate"></p></div>
+         <div class="motoactive col-md-3 card m"><span>Tenth</span>  <form><input class="motoinputstatus" type="text" placeholder="Client or MotoNumber" ><input type="button" value="save" onclick="save(9,'moto')" class="btn btn-primary btn-sm motoslotstatus"><input type="button" value="Leave" class="motoleave btn btn-secondary btn-block hidden "  onclick="leave(9,'moto')"></form><hr><p class="motofreeornot font-weight-bold">FreePlace</p><span>currentUser:</span> <p class='motousername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="motodate"></p></div>
+        
+     </div>
+     <div class="container ticket" id='mototicket'>
+        <div id="motoprintedticket" class="text-center printedticket">
+            <h3 >ticket</h3>
+                <div> <span>Hello: </span><em id='motoclientname'> </em></div>
+                <div> <span>Duration: </span><em id='motoduration'> </em></div>
+                <div> <span>Price: </span><em id='motoprice'></em></div>
+        </div>
+        <button onclick="printDiv('motoprintedticket')" class="btn-success btn-block">Print</button>
+    </div>
+   
+ </div>
+
+    <div class="container CarDiv">
+        <h3 >Car Parking area</h3>
+        <div class="container ">
+            <div class="motodesc row">
+          <img src="car.jpg">
+          <div class="float-right carrunout hidden checkforextra" >
+              <button class="btn btn-info btn-block">Check in trucks area</button>
+              <div>Result:</div>
+              <div class=" checkresult"></div>
+          </div>
+      </div>
+  </div>
+           <span>Number of Free Car Slots <span id='ncarslots' style="color: brown;" ></span></span> 
+        <div class="row">
+            <div class="active col-md-3 card s"><span>First</span> <form><input class="carinputstatus" type="text" placeholder="User name or car Number" ><input type="button"  value="save" onclick="save(0,'car')" class="btn btn-primary btn-sm carslotstatus"><input type="button" value="Leave" class="carleave btn btn-secondary btn-block hidden "  onclick="leave(0,'car')"></form><hr><p class="carfreeornot font-weight-bold">FreePlace</p><span class="font-weight-bold">Client: </span> <p class='carusername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="cardate"></p></div>
+        
+            <div class="active col-md-3 card s"><span>Second</span>   <form><input class="carinputstatus" type="text" placeholder="User name or car Number" ><input type="button" value="save" onclick="save(1,'car')" class="btn btn-primary btn-sm carslotstatus"><input type="button" value="Leave" class="carleave btn btn-secondary btn-block hidden "  onclick="leave(1,'car')"></form><hr><p class="carfreeornot font-weight-bold">FreePlace</p><span class="font-weight-bold">Client: </span> <p class='carusername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="cardate"></p></div>
+          
+            <div class="active col-md-3 card s"><span>third</span>   <form><input class="carinputstatus" type="text" placeholder="User name or car Number" ><input type="button" value="save" onclick="save(2,'car')" class="btn btn-primary btn-sm carslotstatus"><input type="button" value="Leave" class="carleave btn btn-secondary btn-block hidden "  onclick="leave(2,'car')"></form><hr><p class="carfreeornot font-weight-bold">FreePlace</p><span class="font-weight-bold">Client: </span> <p class='carusername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="cardate"></p></div>
+          
+            <div class="active col-md-3 card s"><span>Forth</span> <form><input class="carinputstatus" type="text" placeholder="User name or car Number" ><input type="button" value="save" onclick="save(3,'car')" class="btn btn-primary btn-sm carslotstatus"><input type="button" value="Leave" class="carleave btn btn-secondary btn-block hidden "  onclick="leave(3,'car')"></form><hr><p class="carfreeornot font-weight-bold">FreePlace</p><span class="font-weight-bold">Client: </span> <p class='carusername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="cardate"></p></div>
+            
+            <div class="active col-md-3 card s"><span>Fifth</span> <form><input class="carinputstatus" type="text" placeholder="User name or car Number" ><input type="button" value="save"  onclick="save(4,'car')" class="btn btn-primary btn-sm carslotstatus"><input type="button" value="Leave" class="carleave btn btn-secondary btn-block hidden "  onclick="leave(4,'car')"></form><hr><p class="carfreeornot font-weight-bold">FreePlace</p><span class="font-weight-bold">Client: </span> <p class='carusername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="cardate"></p></div>
+            
+            <div class="active col-md-3 card s"><span>Sixth</span> <form><input class="carinputstatus" type="text" placeholder="User name or car Number" ><input type="button" value="save" onclick="save(5,'car')" class="btn btn-primary btn-sm carslotstatus"><input type="button" value="Leave" class="carleave btn btn-secondary btn-block hidden "  onclick="leave(5,'car')"></form><hr><p class="carfreeornot font-weight-bold">FreePlace</p><span class="font-weight-bold">Client: </span> <p class='carusername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="cardate"></p></div>
+            
+            <div class="active col-md-3 card s"><span>Seventh</span> <form><input class="carinputstatus" type="text" placeholder="User name or car Number" ><input type="button" value="save" onclick="save(6,'car')" class="btn btn-primary btn-sm carslotstatus"><input type="button" value="Leave" class="carleave btn btn-secondary btn-block hidden "  onclick="leave(6,'car')"></form><hr><p class="carfreeornot font-weight-bold">FreePlace</p><span class="font-weight-bold">Client: </span> <p class='carusername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="cardate"></p></div>
+            
+            <div class="active col-md-3 card s"><span>Eighth</span> <form><input class="carinputstatus" type="text" placeholder="User name or car Number" ><input type="button" value="save" onclick="save(7,'car')" class="btn btn-primary btn-sm carslotstatus"><input type="button" value="Leave" class="carleave btn btn-secondary btn-block hidden "  onclick="leave(7,'car')"></form><hr><p class="carfreeornot font-weight-bold">FreePlace</p><span class="font-weight-bold">Client: </span> <p class='carusername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="cardate"></p></div>
+       
+            <div class="active col-md-3 card s"><span>Ninth</span>  <form><input class="carinputstatus" type="text" placeholder="User name or car Number" ><input type="button" value="save" onclick="save(8,'car')" class="btn btn-primary btn-sm carslotstatus"><input type="button" value="Leave" class="carleave btn btn-secondary btn-block hidden "  onclick="leave(8,'car')"></form><hr><p class="carfreeornot font-weight-bold">FreePlace</p><span class="font-weight-bold">Client: </span> <p class='carusername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="cardate"></p></div> 
+           
+            <div class="active col-md-3 card s">tenth  <form><input class="carinputstatus" type="text" placeholder="User name or car Number" ><input type="button" value="save" onclick="save(9,'car')" class="btn btn-primary btn-sm carslotstatus"><input type="button" value="Leave" class="carleave btn btn-secondary btn-block hidden "  onclick="leave(9,'car')"></form><hr><p class="carfreeornot font-weight-bold">FreePlace</p><span class="font-weight-bold">Client: </span> <p class='carusername font-italic'></p><span class="font-weight-bold">StartDate</span><p class="cardate"></p></div>
+            
+        </div>
+        <div class="container ticket" id='ticket'>
+            <div id="printedticket" class="text-center printedticket">
+                <h3 >ticket</h3>
+                    <div> <span>Hello: </span><em id='carclientname'> </em></div>
+                    <div> <span>Duration: </span><em id='carduration'> </em></div>
+                    <div> <span>Price: </span><em id='carprice'> </em></div>
+            </div>
+            <button onclick="printDiv('printedticket')" class="btn-success btn-block">Print</button>
+        </div>
+      
+    </div>
+
+    <div class="container hidden truckDiv">
+        <h3>Truck Parking area</h3>
+        <div class="container ">
+            <div class="motodesc row">
+          <img src="truck.jpg">
+          <div class="float-right truckrunout hidden" >
+              <div style="text-align: center;">Sorry We Cant Find Any Place For You Here </div>
+          </div>
+      </div>
+  </div>
+          <span>Number of Free Truck Slots <span id='ntruckslots' style="color: brown;" ></span></span>
+     <div class="row">
+         <div class="truckactive col-md-3 card t"><span>First</span> <form><input class="truckinputstatus" type="text" placeholder="User name or truck Number" ><input type="button"  value="save" onclick="save(0,'truck')" class="btn btn-primary btn-sm truckslotstatus"><input type="button" value="Leave" class="truckleave btn btn-secondary btn-block hidden "  onclick="leave(0,'truck')"><hr></form><p class="truckfreeornot font-weight-bold ">FreePlace</p><span>Client :</span> <p class='truckusername font-italic'></p><span>StartDate</span><p class="truckdate font-italic"></p></div>
+     
+         <div class="truckactive col-md-3 card t"><span>Second</span>   <form><input class="truckinputstatus" type="text" placeholder="User name or truck Number" ><input type="button" value="save" onclick="save(1,'truck')" class="btn btn-primary btn-sm truckslotstatus"><input type="button" value="Leave" class="truckleave btn btn-secondary btn-block hidden "  onclick="leave(1,'truck')"><hr></form><p class="truckfreeornot font-weight-bold">FreePlace</p><span>Client :</span> <p class='truckusername font-italic'></p><span>StartDate</span><p class="truckdate font-italic"></p></div>
+       
+         <div class="truckactive col-md-3 card t"><span>Third</span>   <form><input class="truckinputstatus" type="text" placeholder="User name or truck Number" ><input type="button" value="save" onclick="save(2,'truck')" class="btn btn-primary btn-sm truckslotstatus"><input type="button" value="Leave" class="truckleave btn btn-secondary btn-block hidden "  onclick="leave(2,'truck')"><hr></form><p class="truckfreeornot font-weight-bold">FreePlace</p><span>Client :</span> <p class='truckusername font-italic'></p><span>StartDate</span><p class="truckdate font-italic"></p></div>
+       
+         <div class="truckactive col-md-3 card t"><span>Forth</span> <form><input class="truckinputstatus" type="text" placeholder="User name or truck Number" ><input type="button" value="save" onclick="save(3,'truck')" class="btn btn-primary btn-sm truckslotstatus"><input type="button" value="Leave" class="truckleave btn btn-secondary btn-block hidden "  onclick="leave(3,'truck')"><hr></form><p class="truckfreeornot font-weight-bold">FreePlace</p><span>Client :</span> <p class='truckusername font-italic'></p><span>StartDate</span><p class="truckdate font-italic"></p></div>
+         
+         <div class="truckactive col-md-3 card t"><span>Fifth</span> <form><input class="truckinputstatus" type="text" placeholder="User name or truck Number" ><input type="button" value="save"  onclick="save(4,'truck')" class="btn btn-primary btn-sm truckslotstatus"><input type="button" value="Leave" class="truckleave btn btn-secondary btn-block hidden "  onclick="leave(4,'truck')"><hr></form><p class="truckfreeornot font-weight-bold">FreePlace</p><span>Client :</span> <p class='truckusername font-italic'></p><span>StartDate</span><p class="truckdate font-italic"></p></div>
+         
+         <div class="truckactive col-md-3 card t"><span>Sixth</span> <form><input class="truckinputstatus" type="text" placeholder="User name or truck Number" ><input type="button" value="save" onclick="save(5,'truck')" class="btn btn-primary btn-sm truckslotstatus"><input type="button" value="Leave" class="truckleave btn btn-secondary btn-block hidden "  onclick="leave(5,'truck')"><hr></form><p class="truckfreeornot font-weight-bold">FreePlace</p><span>Client :</span> <p class='truckusername font-italic'></p><span>StartDate</span><p class="truckdate font-italic"></p></div>
+         
+         <div class="truckactive col-md-3 card t"><span>Seventh</span> <form><input class="truckinputstatus" type="text" placeholder="User name or truck Number" ><input type="button" value="save" onclick="save(6,'truck')" class="btn btn-primary btn-sm truckslotstatus"><input type="button" value="Leave" class="truckleave btn btn-secondary btn-block hidden "  onclick="leave(6,'truck')"><hr></form><p class="truckfreeornot font-weight-bold">FreePlace</p><span>Client :</span> <p class='truckusername font-italic'></p><span>StartDate</span><p class="truckdate font-italic"></p></div>
+         
+         <div class="truckactive col-md-3 card t"><span>Eighth</span> <form><input class="truckinputstatus" type="text" placeholder="User name or truck Number" ><input type="button" value="save" onclick="save(7,'truck')" class="btn btn-primary btn-sm truckslotstatus"><input type="button" value="Leave" class="truckleave btn btn-secondary btn-block hidden "  onclick="leave(7,'truck')"><hr></form><p class="truckfreeornot font-weight-bold">FreePlace</p><span>Client :</span> <p class='truckusername font-italic'></p><span>StartDate</span><p class="truckdate font-italic"></p></div>
+    
+         <div class="truckactive col-md-3 card t"><span>Ninth</span>  <form><input class="truckinputstatus" type="text" placeholder="User name or truck Number" ><input type="button" value="save" onclick="save(8,'truck')" class="btn btn-primary btn-sm truckslotstatus"><input type="button" value="Leave" class="truckleave btn btn-secondary btn-block hidden "  onclick="leave(8,'truck')"><hr></form><p class="truckfreeornot font-weight-bold">FreePlace</p><span>Client :</span> <p class='truckusername font-italic'></p><span>StartDate</span><p class="truckdate font-italic"></p></div>
+        
+         <div class="truckactive col-md-3 card t">Tenth  <form><input class="truckinputstatus" type="text" placeholder="User name or truck Number" ><input type="button" value="save" onclick="save(9,'truck')" class="btn btn-primary btn-sm truckslotstatus"><input type="button" value="Leave" class="truckleave btn btn-secondary btn-block hidden "  onclick="leave(9,'truck')"><hr></form><p class="truckfreeornot font-weight-bold">FreePlace</p><span>Client :</span> <p class='truckusername font-italic'></p><span>StartDate</span><p class="truckdate font-italic"></p></div>
+     </div>
+     <div class="container ticket" id='truckticket'>
+        <div id="truck printedticket" class="text-center printedticket">
+            <h3 >ticket</h3>
+                <div> <span>Hello: </span><em id='truckclientname'> </em></div>
+                <div> <span>Duration: </span><em id='truckduration'> </em></div>
+                <div> <span>Price: </span><em id='truckprice'> </em></div>
+        </div>
+        <button onclick="printDiv('truckprintedticket')" class="btn-success btn-block">Print</button>
+    </div>
+   
+ </div>
+    
+
+<script src="PakingSystem.js"></script>
+
+  
+</body>
+</html>
